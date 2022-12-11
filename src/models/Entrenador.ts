@@ -1,7 +1,8 @@
 export interface Entrenador{
-    codigo:number,
+    id?:string
+    cedula:string,
     nombre:string,
     email:string,
-    telefono:number,
+    telefono:string,
     estado:boolean
 }
