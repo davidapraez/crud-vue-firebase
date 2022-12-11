@@ -1,10 +1,11 @@
 import { defineStore } from 'pinia'
-import type Entrenador from '/models/Entrenador.ts'
+import type {Entrenador} from '../models/Entrenador'
+import {reactive} from 'vue'
 
 export const useEntrenadoresStore = defineStore('entrenadores', () => {
   
   //Variables
-  const entrenadores:Array<Entrenador> = [
+  const entrenadores:Array<Entrenador> = reactive([
     {
       codigo:123,
       nombre:'Diego',
@@ -19,15 +20,14 @@ export const useEntrenadoresStore = defineStore('entrenadores', () => {
       telefono:3222894510,
       estado:true
     },
-  ]
+  ])
 
   //Funciones para la informacion de entrenadores
   const addEntrenador = (entrenador:Entrenador)=>{
     entrenadores.push(entrenador);
     console.log('Entrenador añadido con exito')
+
   }
-
-
-
+  
   return {entrenadores,addEntrenador}
 })

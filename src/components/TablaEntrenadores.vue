@@ -25,13 +25,11 @@
 </template>
 
 <script setup lang="ts">
-    import { onMounted } from '@vue/runtime-core'
+ 
     import {useEntrenadoresStore} from '../stores/entrenadores'
     const {entrenadores} = useEntrenadoresStore()
 
-    onMounted(()=>{
-       
-    })
+   
     
 </script>
 

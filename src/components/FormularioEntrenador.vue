@@ -12,10 +12,10 @@
 </template>
 
 <script setup lang="ts">
-    import {ref} from 'vue'
+    import {ref,watch} from 'vue'
     import {useEntrenadoresStore} from '../stores/entrenadores'
-    //import {Entrenador} from '../stores/entrenadores'
-    const {addEntrenador} = useEntrenadoresStore()
+    import type {Entrenador} from '../models/Entrenador'
+    const {addEntrenador,entrenadores} = useEntrenadoresStore()
 
     const codigo = ref()
     const nombre = ref();
@@ -23,15 +23,18 @@
     const telefono = ref();
     
     const registrar = ()=>{
-        /*const entrenador:Entrenador = {
+        const entrenador:Entrenador = {
             codigo:parseInt(codigo.value),
             nombre:nombre.value,
             email:email.value,
             telefono:parseInt(telefono.value),
             estado:false
         };
-        addEntrenador(entrenador);*/
+        addEntrenador(entrenador);
     }
+    watch(entrenadores, ()=>{
+        console.log('nuevo registro')
+    })
 
 </script>
 
